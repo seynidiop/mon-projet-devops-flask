@@ -1,0 +1,13 @@
+# Ignorer l'environnement virtuel Python
+venv/
+__pycache__/
+*.pyc
+
+# Ignorer la base de données SQLite locale et ses dossiers
+instance/
+*.db
+
+# Ignorer les fichiers cachés du système
+.DS_Store
+.idea/
+.vscode/

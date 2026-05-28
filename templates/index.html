@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Inscription{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5 glass-card">
+        <h2 class="mb-4 text-center">Nouveau Contact</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}<div class="alert alert-{{category}} py-2">{{message}}</div>{% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/register" method="POST">
+            <div class="mb-4"><label class="form-label">Nom Complet</label><input type="text" name="nom" class="form-control bg-transparent text-white border-secondary" required></div>
+            <div class="mb-4"><label class="form-label">Email</label><input type="email" name="email" class="form-control bg-transparent text-white border-secondary" required></div>
+            <button type="submit" class="btn btn-primary w-100 py-3 mt-2">Enregistrer en Base</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
